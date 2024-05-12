@@ -7,9 +7,9 @@ import pickle
 from flask import Flask, request, render_template, jsonify
 from sklearn.preprocessing import StandardScaler
 
-
-app = Flask(__name__)
-
+#create project using "app" onlt, here i have used used application becouse for deployment, they need application name
+application = Flask(__name__)
+app=application
 ## import ridge regressor model and standard scalar pickle
 ridge_model=pickle.load(open('models/ridge.pkl','rb'))
 standard_scaler=pickle.load(open('models/scaler.pkl','rb'))
